@@ -1,0 +1,24 @@
+.menu-layout {
+	width: 10%;
+	float: left;
+}
+
+.content-layout {
+	float: left;
+	width: 90%;
+}
+
+.top-layout {
+	width: 100%;
+	height: 50px;
+}
+
+.horizontal-line {
+	width: 100%;
+	height: 1px;
+	background-color: #cccccc;
+}
+
+.list-item {
+	height: 25px;
+}
