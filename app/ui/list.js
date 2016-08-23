@@ -3,15 +3,7 @@ import { Table, Icon } from 'antd';
 import { connect } from 'react-redux';
 import Item from 'ui/list-item';
 
-
-const columns = 
-  [{
-    title: '姓名',
-    dataIndex: 'desc',
-    key: 'desc',
-  }];
-
- const List = React.createClass({
+const List = React.createClass({
 
     getInitialState: function() {
          return {
@@ -20,16 +12,17 @@ const columns =
      },
 
     render: function() {
-      console.log(this.props);
-
       if (this.props.results != undefined) {
-        console.log(this.props.results);
         var resultsArr = this.props.results;
         return (
-          <Table columns={columns} dataSource={resultsArr} showHeader={false}/>
-        );
+          <ul>
+            {resultsArr.map((item, i) => 
+                <Item {...item}/>
+            )}
+          </ul>
+          );
       } else {
-        return (<div>no data</div>);
+        return (<div>empty</div>);
       }
       
     }
