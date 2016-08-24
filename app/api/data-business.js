@@ -7,7 +7,6 @@ export function getData(type, page){
         url: 'http://gank.io/api/data/'+type+'/10/'+page,
         dataType: 'json',
         success: function(respone) {
-            console.log(respone.error);
             if (!respone.error) {
             	store.dispatch({
 	            	type: type,
