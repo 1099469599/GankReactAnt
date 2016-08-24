@@ -5,6 +5,11 @@ import {TYPE_ANDROID, TYPE_IOS, TYPE_FRONTEND, TYPE_APPS, TYPE_EXPAND, TYPE_RECO
 import {getData} from 'api/data-business';
 
 export default React.createClass({
+
+	componentDidMount: function() {
+		getData(TYPE_ANDROID, 1);
+	},
+	
 	render: function() {
 		return (
 			<Menu mode="inline" mode="vertical" onSelect={this.onSelect}

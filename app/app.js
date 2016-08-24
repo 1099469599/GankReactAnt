@@ -9,8 +9,8 @@ import App from 'layouts/app';
 
 // Components
 import Android from 'ui/list';
-import iOS from 'ui/test';
-import Frontend from 'ui/frontend';
+import iOS from 'ui/list';
+import Frontend from 'ui/list';
 import Apps from 'ui/list';
 import Expand from 'ui/list';
 import Recommend from 'ui/list';
