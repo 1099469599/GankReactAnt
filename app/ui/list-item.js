@@ -19,7 +19,7 @@ export default React.createClass({
 
                     <div className='list-item-bottom'>
                         <label className='list-item-who'>{item.who}</label>
-                        <label className='list-item-time'>{item.createdAt}</label>
+                        <label className='list-item-time'>{item.publishedAt}</label>
                     </div>
                 </div>
             );

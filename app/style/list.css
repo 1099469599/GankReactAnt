@@ -3,14 +3,20 @@
 	border-bottom: solid 1px #cccccc;
 	padding-left: 15px;
 	padding-right: 15px;
+	background-color: #ffffff;
+}
+
+.list-item:hover {
+	background-color: #eaf8fe;
 }
 
 .list-item-top {
-	margin-top: 20px;
+	padding-top: 20px;
 }
 
 .list-item-bottom {
 	margin-top: 10px;
+	padding-bottom: 10px;
 }
 
 .list-item-title {
@@ -23,14 +29,17 @@
 .list-item-who {
 	font-size: 15px;
 	margin-top: 8px;
+	color: #909090;
 }
 
 .list-item-type {
 	font-size: 14px;
 	float: right;
+	color: #909090;
 }
 
 .list-item-time {
 	font-size: 14px;
 	float: right;
+	color: #909090;
 }
