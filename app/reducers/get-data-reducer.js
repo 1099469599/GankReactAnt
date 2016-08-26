@@ -2,35 +2,29 @@ import {TYPE_ANDROID, TYPE_IOS, TYPE_FRONTEND, TYPE_APPS, TYPE_EXPAND, TYPE_RECO
 
 var initialState = {
 	type: TYPE_ANDROID,
+    isNewType: true,
     results: []
 };
 
 export default function(state = initialState, action) {
-	console.log('action type = '+action.type);
-
-	var newState = Object.assign({}, state)
-	newState.type = action.type;
-    newState.results = action.results;
-	//console.log('newState results = '+newState.results[0].title);
-    return newState;
-
-    /*switch(action.type) {
+    var teamArr = [];
+    if (action.results instanceof Array) {
+        teamArr = action.results;
+    }
+    if (state.type !== action.type) {
+        state.results = [];
+        state.isNewType = true;
+    } else {
+        state.isNewType = false;
+    }
+	var newState = Object.assign({}, state, {
+        results :[
+            ...state.results,
+            teamArr
+        ]
         
-        case ANDROID:
-            var newState = Object.assign({}, state)
-            newState.text = action.text;
-			console.log('newState text = '+newState.text);
-
-            return newState;
-
-        case IOS:
-
-            var newState = Object.assign({}, state)
-            newState.users = action.text;
-            return newState;
-
-        default:
-            return state;
-            
-    }*/
+    })
+	newState.type = action.type;
+    newState.isNewType = state.isNewType;
+    return newState;
 }

@@ -2,14 +2,20 @@ import React from 'react';
 import { Table, Icon } from 'antd';
 import { connect } from 'react-redux';
 import Item from 'ui/list-item';
+import {TYPE_ANDROID} from 'constants/constants';
+import {getData} from 'api/data-business';
+
+var loading = false;
+var page = 1;
+
 
 const List = React.createClass({
 
     getInitialState: function() {
          return {
-            loading: false,
-            results: [],
-            dataList: []
+          type: TYPE_ANDROID,
+          isNewType: true,
+          results: []
          }
      },
 
@@ -24,21 +30,27 @@ const List = React.createClass({
       var windowHeight = $(window).height();
       var scrollTop = $(window).scrollTop();
 
-      if(!this.state.loading && (scrollTop + windowHeight >= listHeight)){
-         console.log('load more');
-         this.setState({loading: true});
-      } else{
-        console.log('ignore');
+      if(!loading && (scrollTop + windowHeight >= listHeight)){
+         if (this.props.type != undefined) {
+          ++ page;
+          getData(this.props.type, page);
+          loading = true;
+         }
       }
     },
-
     render: function() {
+      if (this.props.isNewType) {
+        page = 1;
+      }
+      loading = false;
       if (this.props.results != undefined) {
         var resultsArr = this.props.results;
         return (
           <ul id='list-contain'>
-            {resultsArr.map((item, i) => 
+            {resultsArr.map((arr, i) =>
+              arr.map((item, j) => 
                 <Item {...item}/>
+              )
             )}
           </ul>
           );
@@ -48,14 +60,11 @@ const List = React.createClass({
     }
 });
 
-// var tempArr = state.getDataReducer.results;
-//   for(var i=0, length = tempArr.length; i < length; i++) {
-//     results.push(tempArr[i]);
-//   }  
-
 const stateToProps = function(state) {
   return {
-      results: state.getDataReducer.results
+    type: state.getDataReducer.type,
+    isNewType: state.getDataReducer.isNewType,
+    results: state.getDataReducer.results
   }
 }
 
