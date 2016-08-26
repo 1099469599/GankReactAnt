@@ -15,7 +15,6 @@ export default React.createClass({
         return (
             <div>
                 <div className="top-layout">top</div>
-                <HorizontalLine />
                 <div className="main-layout">
                     <div className="menu-layout">
                         <Menu />
