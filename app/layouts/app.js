@@ -28,5 +28,3 @@ export default React.createClass({
         )
     }
 });
-
-import Test from 'ui/test';
