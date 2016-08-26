@@ -1,5 +1,5 @@
 ## GankReactAnt
-A repository for study.
+A web repository for study.
 
 Continuous updating...
 
@@ -16,3 +16,8 @@ Continuous updating...
 ### Screenshot
 
 ![](http://7xnkv6.com1.z0.glb.clouddn.com/QQ20160826-1@2x.png)
+
+
+### Thanks
+
+[Gank.io](http://gank.io)
