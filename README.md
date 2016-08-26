@@ -14,8 +14,7 @@ Continuous updating...
 
 
 ### Screenshot
-
-![](https://github.com/linkaipeng/GankReactAnt/raw/master/screenshots/screenshot01.png)
+![](https://github.com/linkaipeng/GankReactAnt/raw/master/screenshots/screenshot1.png)
 
 
 ### Thanks
