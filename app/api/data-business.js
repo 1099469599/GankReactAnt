@@ -7,7 +7,6 @@ export function getData(type, page){
         dataType: 'json',
         success: function(respone) {
             if (!respone.error) {
-            	
                 getImages(type, page, respone.results);
             }
 			
@@ -26,9 +25,14 @@ export function getImages(type, page, dataResults){
         success: function(respone) {
             if (!respone.error) {
                 var images = respone.results;
-                dataResults.map((dataItem, i)=>
-                    dataResults[i].imageUrl = images[i].url
-                )
+                dataResults.map((dataItem, i)=>{
+                    var imageLength = images.length;
+                    if (i < imageLength) {
+                        dataResults[i].imageUrl = images[i].url
+                    } else {
+                        dataResults[i].imageUrl = images[0].url
+                    }
+                })
                 store.dispatch({
                     type: type,
                     results: dataResults
@@ -37,7 +41,10 @@ export function getImages(type, page, dataResults){
             
         },
         error: function(xhr, type) {
-            
+            store.dispatch({
+                    type: type,
+                    results: dataResults
+            })
         }
     });
 }
