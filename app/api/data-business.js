@@ -1,4 +1,5 @@
 import store from 'store';
+import { message } from 'antd';
 
 export function getData(type, page){
 	return $.ajax({
@@ -8,11 +9,13 @@ export function getData(type, page){
         success: function(respone) {
             if (!respone.error) {
                 getImages(type, page, respone.results);
+            } else {
+                message.error('获取数据失败');
             }
 			
         },
         error: function(xhr, type) {
-            
+            message.error('获取数据失败');
         }
     });
 }
@@ -37,13 +40,18 @@ export function getImages(type, page, dataResults){
                     type: type,
                     results: dataResults
                 })
+            } else {
+                store.dispatch({
+                    type: type,
+                    results: dataResults
+                })
             }
             
         },
         error: function(xhr, type) {
             store.dispatch({
-                    type: type,
-                    results: dataResults
+                type: type,
+                results: dataResults
             })
         }
     });
