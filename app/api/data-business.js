@@ -2,6 +2,7 @@ import store from 'store';
 import { message } from 'antd';
 
 export function getData(type, page){
+    const loadingMessage = message.loading('数据加载中...', 0);
 	return $.ajax({
         type: 'GET',
         url: 'http://gank.io/api/data/'+type+'/20/'+page,
@@ -12,10 +13,11 @@ export function getData(type, page){
             } else {
                 message.error('获取数据失败');
             }
-			
+            setTimeout(loadingMessage, 600);
         },
         error: function(xhr, type) {
             message.error('获取数据失败');
+            setTimeout(loadingMessage, 600);
         }
     });
 }
