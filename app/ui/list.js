@@ -1,5 +1,4 @@
 import React from 'react';
-import { Table, Icon } from 'antd';
 import { connect } from 'react-redux';
 import Item from 'ui/list-item';
 import {TYPE_ANDROID} from 'constants/constants';

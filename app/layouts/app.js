@@ -1,9 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
 import Menu from 'ui/menu';
-import HorizontalLine from 'ui/horizontal-line';
-
-import { Table, Icon } from 'antd';
 
 import DataList from 'ui/list';
 import 'style/app.css';
