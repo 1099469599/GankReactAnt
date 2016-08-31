@@ -10,15 +10,7 @@ gulp.task('webpack', function() {
     .pipe(gulp.dest('./'));
 });
 
-// API (database) Server
-var apiServer = jsonServer.create();
-apiServer.use(jsonServer.defaults());
-
-var router = jsonServer.router('db.json');
-apiServer.use(router);
-
 gulp.task('serve:api', function (cb) {
-  //apiServer.listen(3000);
   cb();
 });
 
