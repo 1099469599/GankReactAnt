@@ -9,31 +9,23 @@ import Main from 'layouts/main'
 import App from 'layouts/app';
 
 // Components
-import Android from 'ui/list';
-import iOS from 'ui/list';
-import Frontend from 'ui/list';
-import Apps from 'ui/list';
-import Expand from 'ui/list';
-import Recommend from 'ui/list';
-import Video from 'ui/list';
-import Nice from 'ui/list';
-import All from 'ui/list';
+import List from 'ui/list';
 
 ReactDOM.render((
     <Provider store={store}>
         <Router history={browserHistory}>
 
             <Route component={Main}>
-            	<Route path="/" component={Android}/>
-				<Route path="/android" component={Android}/>
-				<Route path="/ios" component={iOS}/>
-				<Route path="/frontend" component={Frontend}/>
-				<Route path="/apps" component={Apps}/>
-				<Route path="/expand" component={Expand}/>
-				<Route path="/recommend" component={Recommend}/>
-				<Route path="/video" component={Video}/>
-				<Route path="/nice" component={Nice}/>
-				<Route path="/all" component={All}/>
+            	<Route path="/" component={List}/>
+				<Route path="/android" component={List}/>
+				<Route path="/ios" component={List}/>
+				<Route path="/frontend" component={List}/>
+				<Route path="/apps" component={List}/>
+				<Route path="/expand" component={List}/>
+				<Route path="/recommend" component={List}/>
+				<Route path="/video" component={List}/>
+				<Route path="/nice" component={List}/>
+				<Route path="/all" component={List}/>
             </Route>
 
         </Router>
