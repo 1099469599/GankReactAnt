@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import store from 'store';
 
 // Layouts
+import Main from 'layouts/main'
 import App from 'layouts/app';
 
 // Components
@@ -22,7 +23,7 @@ ReactDOM.render((
     <Provider store={store}>
         <Router history={browserHistory}>
 
-            <Route component={App}>
+            <Route component={Main}>
             	<Route path="/" component={Android}/>
 				<Route path="/android" component={Android}/>
 				<Route path="/ios" component={iOS}/>
