@@ -7,12 +7,14 @@ import 'style/app.css';
 import 'antd/dist/antd.css';
 import 'style/m/common.css';
 
+import MobileList from 'ui/m/m-list';
+
 
 export default React.createClass({
     render: function() {
         return (
             <div>
-                mobile
+                <MobileList />
             </div>
         )
     }

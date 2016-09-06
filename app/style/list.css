@@ -55,3 +55,20 @@
 	margin-top: 3px;
 	margin-right: 15px;
 }
+
+
+
+.m-list-item-title {
+	font-weight: bold;
+	font-size: 14px;
+	display:block;
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+}
+
+.m-list-item-who {
+	font-size: 15px;
+	margin-top: 5px;
+	color: #909090;
+}
