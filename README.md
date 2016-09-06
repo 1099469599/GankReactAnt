@@ -28,7 +28,16 @@ visit http://127.0.0.1:8000
 ```
 
 ### Screenshot
+
+#### PC Browser
+
 ![](https://github.com/linkaipeng/GankReactAnt/raw/master/screenshots/screenshot1.png)
+
+#### Mobile Browser
+
+<img src="screenshots/mobile-list-screenshot.png" width=270 height=486/>
+
+
 
 
 ### Thanks
