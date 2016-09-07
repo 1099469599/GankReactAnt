@@ -17,11 +17,13 @@ git clone https://github.com/linkaipeng/GankReactAnt
 
 cd GankReactAnt
 
+
 $ npm install
 $ npm install antd
 $ npm install css-loader
 $ npm install style-loader
 $ webpack
+$ npm install -g gulp
 $ gulp
 
 visit http://127.0.0.1:8000
